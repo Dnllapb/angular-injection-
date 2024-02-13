@@ -5,5 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class ShowService {
 
-  constructor() { }
+  constructor(private showService: ShowService) { }
+  private listItems = [{label: 'first',value: 1},
+  {label: 'second',value: 2},
+  {label: 'third',value: 3}];
+
+  get items () {
+    return this.listItems;
+  }
 }

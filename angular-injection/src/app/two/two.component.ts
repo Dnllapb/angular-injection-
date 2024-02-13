@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ShowService } from '../show.service';
 
 @Component({
   selector: 'app-two',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./two.component.css']
 })
 export class TwoComponent {
+  constructor(private showService: ShowService) {}
 
+  get items() {
+    return this.showService.items;
+  }
 }
